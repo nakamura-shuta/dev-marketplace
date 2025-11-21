@@ -1,7 +1,7 @@
 #!/bin/bash
 
-  echo "🔔 Write tool が実行されました！"
-  echo "📝 ファイル情報: $CLAUDE_TOOL_INPUT"
-  echo ""
+echo "🔔 Write tool が実行されました！" >&2
+echo "📝 ファイル情報: $CLAUDE_TOOL_INPUT" >&2
+echo "" >&2
 
-  exit 0
+exit 1

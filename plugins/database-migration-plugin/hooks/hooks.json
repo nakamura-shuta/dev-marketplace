@@ -3,11 +3,11 @@
   "hooks": {
     "PreToolUse": [
       {
-        "matcher": "Write|Edit|NotebookEdit|Bash",
+        "matcher": "Write",
         "hooks": [
           {
             "type": "command",
-            "command": "/Users/nakamura.shuta/.claude/plugins/marketplaces/dev-marketplace/plugins/database-migration-plugin/scripts/migration-check.sh",
+            "command": "${CLAUDE_PLUGIN_ROOT}/scripts/migration-check.sh",
             "timeout": 30
           }
         ]
