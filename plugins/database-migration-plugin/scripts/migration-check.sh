@@ -3,9 +3,6 @@
 # stdinからJSONを読み取る
 INPUT=$(cat)
 
-# デバッグ: 入力内容を確認
-echo "🔍 DEBUG: JSON Input = $INPUT" >&2
-
 # jqでfile_pathを抽出（jqがない場合はgrepで代替）
 if command -v jq &> /dev/null; then
     FILE_PATH=$(echo "$INPUT" | jq -r '.tool_input.file_path // empty')
@@ -13,8 +10,6 @@ else
     # jqがない場合の簡易的な抽出
     FILE_PATH=$(echo "$INPUT" | grep -o '"file_path":"[^"]*"' | cut -d'"' -f4)
 fi
-
-echo "🔍 DEBUG: file_path = $FILE_PATH" >&2
 
 # マイグレーションファイルかどうかチェック
 if echo "$FILE_PATH" | grep -q "migrations/.*\.sql"; then
