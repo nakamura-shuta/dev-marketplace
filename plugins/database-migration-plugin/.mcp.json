@@ -2,11 +2,7 @@
   "mcpServers": {
     "sqlite": {
       "command": "uvx",
-      "args": [
-        "mcp-server-sqlite",
-        "--db-path",
-        "./db/database.db"
-      ]
+      "args": ["mcp-server-sqlite"]
     }
   }
 }
